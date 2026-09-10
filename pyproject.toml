@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "high-resolution-satellite-segmentation"
+version = "1.0.0"
+description = "Tiled building segmentation and quantification for high-resolution satellite imagery."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
