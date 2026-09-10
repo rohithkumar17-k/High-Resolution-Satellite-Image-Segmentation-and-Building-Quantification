@@ -21,6 +21,6 @@ tiling:
   overlap: 0.25
   min_foreground_fraction: 0.0001
 postprocess:
-  min_building_area_px: 20
+  min_area_px: 20
   opening_kernel: 0
   closing_kernel: 3
