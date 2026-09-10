@@ -9,5 +9,5 @@ description = "Tiled building segmentation and quantification for high-resolutio
 requires-python = ">=3.10"
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["."]
 testpaths = ["tests"]
