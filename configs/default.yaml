@@ -1,0 +1,28 @@
+seed: 42
+paths:
+  tiles: data/processed/tiles
+  splits: data/splits
+  checkpoints: outputs/checkpoints
+  metrics: outputs/metrics
+model:
+  architecture: unet              # unet or deeplabv3plus
+  encoder: resnet18               # resnet18 baseline; resnet50 for stronger experiment
+  encoder_weights: imagenet
+training:
+  epochs: 30
+  batch_size: 8
+  learning_rate: 0.0003
+  num_workers: 2
+  threshold: 0.5
+  device: auto
+  bce_weight: 0.5
+tiling:
+  tile_size: 512
+  overlap: 0.25
+  min_foreground_fraction: 0.0001
+postprocess:
+  # Components smaller than this are treated as segmentation noise.
+  # This key matches src.quantification.postprocess.
+  min_area_px: 20
+  opening_kernel: 0
+  closing_kernel: 3

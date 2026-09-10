@@ -1,0 +1,26 @@
+seed: 42
+paths:
+  tiles: data/processed/tiles
+  splits: data/splits
+  checkpoints: outputs/checkpoints/deeplabv3plus_resnet50
+  metrics: outputs/metrics
+model:
+  architecture: deeplabv3plus
+  encoder: resnet50
+  encoder_weights: imagenet
+training:
+  epochs: 30
+  batch_size: 4
+  learning_rate: 0.0001
+  num_workers: 2
+  threshold: 0.5
+  device: auto
+  bce_weight: 0.5
+tiling:
+  tile_size: 512
+  overlap: 0.25
+  min_foreground_fraction: 0.0001
+postprocess:
+  min_building_area_px: 20
+  opening_kernel: 0
+  closing_kernel: 3
